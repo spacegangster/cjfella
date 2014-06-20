@@ -37,14 +37,14 @@ read_local_names = (local_names) ->
 mk_statement = (var_name, dep_path) ->
   "#{var_name} = require \"#{dep_path}\""
 
-# @param {string} amd_source coffeescript strictly formatted
+# @param {Array<string>} amd_source coffeescript strictly formatted
 #  define [
 #    dependency paths...
 #  ], ( 
 #    modules local names...
 #  ) ->
-rewrite_head = (amd_source) ->
-  lines        = (dropr 1, (drop 1, (str_split '\n', amd_source)))
+rewrite_head = (amd_source_lines) ->
+  lines        = (dropr 1, (drop 1, amd_source_lines))
   splitter_idx = (find_splitter_idx lines)
   deps_lines   = (take splitter_idx, lines)
   locals_lines = (drop (inc splitter_idx), lines)
@@ -53,7 +53,5 @@ rewrite_head = (amd_source) ->
   locals = (read_local_names locals_lines)
   #
   require_statements = (map mk_statement, locals, deps)
-  #
-  commonjs_head = (str_join '\n', require_statements)
 
 module.exports = rewrite_head

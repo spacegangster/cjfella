@@ -37,16 +37,15 @@ mk_statement = function(var_name, dep_path) {
   return "" + var_name + " = require \"" + dep_path + "\"";
 };
 
-rewrite_head = function(amd_source) {
-  var commonjs_head, deps, deps_lines, lines, locals, locals_lines, require_statements, splitter_idx;
-  lines = dropr(1, drop(1, str_split('\n', amd_source)));
+rewrite_head = function(amd_source_lines) {
+  var deps, deps_lines, lines, locals, locals_lines, require_statements, splitter_idx;
+  lines = dropr(1, drop(1, amd_source_lines));
   splitter_idx = find_splitter_idx(lines);
   deps_lines = take(splitter_idx, lines);
   locals_lines = drop(inc(splitter_idx), lines);
   deps = read_deps_names(deps_lines);
   locals = read_local_names(locals_lines);
-  require_statements = map(mk_statement, locals, deps);
-  return commonjs_head = str_join('\n', require_statements);
+  return require_statements = map(mk_statement, locals, deps);
 };
 
 module.exports = rewrite_head;

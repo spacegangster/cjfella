@@ -1,5 +1,4 @@
-rewrite_head = require './requeror-rewrite-head'
-
+rewrite = require './requeror-rewrite-amd-source'
 
 amd_source = """
 define [
@@ -9,7 +8,9 @@ define [
   $
 , fn
 ) ->
+
+  { init } = fn
 """
 
-console.log "\n\n"
-console.log((rewrite_head amd_source))
+console.log "\n>> STARTING\n"
+console.log((rewrite amd_source))
