@@ -39,6 +39,9 @@ mk_statement = function(var_name, dep_path) {
 
 rewrite_head = function(amd_source_lines) {
   var deps, deps_lines, lines, locals, locals_lines, require_statements, splitter_idx;
+  if ((count(amd_source_lines)) === 1) {
+    return [];
+  }
   lines = dropr(1, drop(1, amd_source_lines));
   splitter_idx = find_splitter_idx(lines);
   deps_lines = take(splitter_idx, lines);

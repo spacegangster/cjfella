@@ -43,7 +43,10 @@ mk_statement = (var_name, dep_path) ->
 #  ], ( 
 #    modules local names...
 #  ) ->
+#  or `define ->` -- independent modules
 rewrite_head = (amd_source_lines) ->
+  return [] if (count amd_source_lines) == 1
+  #
   lines        = (dropr 1, (drop 1, amd_source_lines))
   splitter_idx = (find_splitter_idx lines)
   deps_lines   = (take splitter_idx, lines)

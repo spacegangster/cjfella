@@ -1,20 +1,19 @@
-{ "name"        : "requeror"
-, "version"     : "1.0.0"
+{ "name"        : "cjfella"
+, "version"     : "1.0.1"
 , "description" : "Converts AMD defined dependencies to CommonJS ones"
 
-, "keywords"    : [ "functional"
-                  , "functional programming"
-                  , "functions"
-                  , "utility"
-                  , "utility belt" ]
+, "keywords"    : [ "utility"
+                  , "commonjs"
+                  , "amd"
+                  , "modules" ]
 
 , "repository"  : { "type" : "git"
-                  , "url"  : "https://github.com/ognivo/requeror" }
+                  , "url"  : "https://github.com/ognivo/cjfella" }
 
 , "dependencies": { "minimist"  : "0.2.x"
                   , "stdin"     : "0.0.x"
-                  , "f-empower" : "3.3.2" }
+                  , "f-empower" : "3.x.x" }
 
 , "author"      : "Ivan Fedorov <sharp.maestro@gmail.com>"
 , "license"     : "MIT"
-, "main"        : "requeror.js" }
+, "main"        : "js/fella.js" }
