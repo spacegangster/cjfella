@@ -1,6 +1,9 @@
 { "name"        : "cjfella"
-, "version"     : "1.0.3"
+, "version"     : "1.0.4"
 , "description" : "Converts AMD defined dependencies to CommonJS ones"
+, "scripts" : {
+    "prepublish": "./build.sh"
+  },
 
 , "keywords"    : [ "utility"
                   , "commonjs"
