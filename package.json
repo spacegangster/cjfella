@@ -1,22 +1,29 @@
-{ "name"        : "cjfella"
-, "version"     : "1.0.4"
-, "description" : "Converts AMD defined dependencies to CommonJS ones"
-, "scripts" : {
-    "prepublish": "./build.sh"
-  },
-
-, "keywords"    : [ "utility"
-                  , "commonjs"
-                  , "amd"
-                  , "modules" ]
-
-, "repository"  : { "type" : "git"
-                  , "url"  : "https://github.com/ognivo/cjfella" }
-
-, "dependencies": { "minimist"  : "0.2.x"
-                  , "stdin"     : "0.0.x"
-                  , "f-empower" : "3.x.x" }
-
-, "author"      : "Ivan Fedorov <sharp.maestro@gmail.com>"
-, "license"     : "MIT"
-, "main"        : "main.js" }
+{
+          "name": "cjfella",
+          "version": "1.0.4",
+          "description": "Converts AMD defined dependencies to CommonJS ones",
+          "scripts": {
+                    "prepublish": "./build.sh"
+          },
+          "keywords": [
+                    "utility",
+                    "commonjs",
+                    "amd",
+                    "modules"
+          ],
+          "repository": {
+                    "type": "git",
+                    "url": "https://github.com/ognivo/cjfella"
+          },
+          "dependencies": {
+                    "f-empower": "3.x.x",
+                    "minimist": "0.2.x",
+                    "stdin": "0.0.x"
+          },
+          "author": "Ivan Fedorov <sharp.maestro@gmail.com>",
+          "license": "MIT",
+          "main": "main.js",
+          "devDependencies": {
+                    "coffee-script": "^1.12.4"
+          }
+}
