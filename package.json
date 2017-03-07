@@ -1,5 +1,5 @@
 { "name"        : "cjfella"
-, "version"     : "1.0.1"
+, "version"     : "1.0.2"
 , "description" : "Converts AMD defined dependencies to CommonJS ones"
 
 , "keywords"    : [ "utility"
@@ -16,4 +16,4 @@
 
 , "author"      : "Ivan Fedorov <sharp.maestro@gmail.com>"
 , "license"     : "MIT"
-, "main"        : "js/fella.js" }
+, "main"        : "main.js" }
